@@ -1,9 +1,9 @@
-import { useState } from "react";
+import Navbar from "./components/Navbar";
+import logo from "./assets/logo.png";
+
 import {
   ArrowRight,
   ArrowUpRight,
-  Menu,
-  X,
   Code2,
   Users,
   Lightbulb,
@@ -118,24 +118,7 @@ const processSteps = [
   ["05", "Build a lasting partnership", "We value ongoing collaboration and continuous improvement as your business evolves."],
 ];
 
-function Logo() {
-  return (
-    <a href="#home" className="flex items-center gap-2.5" aria-label="InnovaRise Technology home">
-      <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-600/20">
-        <span className="text-xl font-black tracking-tighter">i</span>
-        <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-cyan-300" />
-      </span>
-      <span className="leading-tight">
-        <span className="block text-[17px] font-extrabold tracking-tight text-slate-950">
-          Innova<span className="text-blue-600">Rise</span>
-        </span>
-        <span className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-slate-500">
-          Technology
-        </span>
-      </span>
-    </a>
-  );
-}
+
 
 function SectionHeading({ eyebrow, title, description, centered = false }) {
   return (
@@ -157,58 +140,49 @@ function SectionHeading({ eyebrow, title, description, centered = false }) {
   );
 }
 
-function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const links = [
-    ["Home", "#home"],
-    ["About Us", "#about"],
-    ["Services", "#services"],
-    ["Technology", "#technology"],
-    ["Industries", "#industries"],
-    ["Careers", "#careers"],
-  ];
 
-  return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl">
-      <div className="section-shell flex h-[76px] items-center justify-between">
-        <Logo />
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
-          {links.map(([label, href]) => (
-            <a key={label} href={href} className="text-[13px] font-semibold text-slate-600 transition hover:text-blue-600">
-              {label}
-            </a>
-          ))}
-        </nav>
-        <a href="#contact" className="hidden items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700 lg:inline-flex">
-          Let's Connect <ArrowUpRight size={16} />
-        </a>
-        <button
-          type="button"
-          className="rounded-lg p-2 text-slate-800 lg:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-      {menuOpen && (
-        <nav className="border-t border-slate-100 bg-white px-6 py-5 lg:hidden" aria-label="Mobile navigation">
-          <div className="section-shell flex flex-col gap-4">
-            {links.map(([label, href]) => (
-              <a key={label} href={href} onClick={() => setMenuOpen(false)} className="text-sm font-semibold text-slate-700">
-                {label}
-              </a>
-            ))}
-            <a href="#contact" onClick={() => setMenuOpen(false)} className="mt-1 inline-flex w-fit items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white">
-              Let's Connect <ArrowUpRight size={16} />
-            </a>
-          </div>
-        </nav>
-      )}
-    </header>
-  );
-}
+
+  // return (
+  //   <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl">
+  //     <div className="section-shell flex h-[76px] items-center justify-between">
+  //       <Logo />
+  //       <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+  //         {links.map(([label, href]) => (
+  //           <a key={label} href={href} className="text-[13px] font-semibold text-slate-600 transition hover:text-blue-600">
+  //             {label}
+  //           </a>
+  //         ))}
+  //       </nav>
+  //       <a href="#contact" className="hidden items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700 lg:inline-flex">
+  //         Let's Connect <ArrowUpRight size={16} />
+  //       </a>
+  //       <button
+  //         type="button"
+  //         className="rounded-lg p-2 text-slate-800 lg:hidden"
+  //         onClick={() => setMenuOpen(!menuOpen)}
+  //         aria-label={menuOpen ? "Close menu" : "Open menu"}
+  //         aria-expanded={menuOpen}
+  //       >
+  //         {menuOpen ? <X size={24} /> : <Menu size={24} />}
+  //       </button>
+  //     </div>
+  //     {menuOpen && (
+  //       <nav className="border-t border-slate-100 bg-white px-6 py-5 lg:hidden" aria-label="Mobile navigation">
+  //         <div className="section-shell flex flex-col gap-4">
+  //           {links.map(([label, href]) => (
+  //             <a key={label} href={href} onClick={() => setMenuOpen(false)} className="text-sm font-semibold text-slate-700">
+  //               {label}
+  //             </a>
+  //           ))}
+  //           <a href="#contact" onClick={() => setMenuOpen(false)} className="mt-1 inline-flex w-fit items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white">
+  //             Let's Connect <ArrowUpRight size={16} />
+  //           </a>
+  //         </div>
+  //       </nav>
+  //     )}
+  //   </header>
+  // );
+
 
 function Hero() {
   return (
@@ -511,7 +485,15 @@ function Footer() {
     <footer id="careers" className="bg-[#07152f] text-white">
       <div className="section-shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
-          <div className="inline-block rounded-xl bg-white px-3 py-2"><Logo /></div>
+          <div className="inline-block rounded-xl bg-white px-3 py-2">
+            <a href="#home">
+                <img
+                  src={logo}
+                  alt="InnovaRise Technology"
+                  className="h-12 w-auto max-w-[200px] object-contain"
+              />
+            </a>
+      </div>
           <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">Driving innovation. Empowering businesses. Connecting talent with opportunity.</p>
           <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">We help businesses grow through technology consulting, IT staffing, talent acquisition and workforce solutions.</p>
         </div>
@@ -547,10 +529,15 @@ function Footer() {
   );
 }
 
+
 export default function App() {
   return (
     <div className="min-h-screen bg-white font-sans antialiased">
-      <Header />
+
+      {/* Navigation Bar */}
+      <Navbar />
+
+      {/* Main Website Sections */}
       <main>
         <Hero />
         <About />
@@ -561,7 +548,11 @@ export default function App() {
         <Approach />
         <ContactCTA />
       </main>
+
+      {/* Footer */}
       <Footer />
+
     </div>
   );
 }
+
