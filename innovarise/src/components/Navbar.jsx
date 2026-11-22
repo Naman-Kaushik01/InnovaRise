@@ -31,17 +31,17 @@ const Navbar = () => {
           <img
             src={logo}
             alt="InnovaRise Technology"
-            className="h-12 w-auto max-w-[200px] object-contain"
+            className="h-18 w-auto max-w-[300px] object-contain"
           />
         </a>
 
         {/* DESKTOP NAVIGATION */}
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="group flex items-center gap-1 whitespace-nowrap text-[13px] font-semibold text-slate-600 transition hover:text-blue-600"
+              className="group flex items-center gap-1 whitespace-nowrap text-[15px] font-semibold text-slate-600 transition hover:text-blue-600"
             >
               {link.name}
 
