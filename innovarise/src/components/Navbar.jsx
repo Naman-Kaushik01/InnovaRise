@@ -41,7 +41,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="group flex items-center gap-1 whitespace-nowrap text-[15px] font-semibold text-slate-600 transition hover:text-blue-600"
+              className="group flex items-center gap-1 whitespace-nowrap text-[18px] font-semibold text-slate-600 transition hover:text-blue-600"
             >
               {link.name}
 
