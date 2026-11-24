@@ -4,6 +4,7 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Services from "./sections/Services";
 import WhyUs from "./sections/WhyUs";
+import Technology from "./sections/Technology";
 
 
 import {
@@ -145,36 +146,6 @@ function SectionHeading({ eyebrow, title, description, centered = false }) {
   );
 }
 
-
-function Technology() {
-  return (
-    <section id="technology" className="overflow-hidden bg-[#081832] py-24 text-white lg:py-28">
-      <div className="section-shell">
-        <div className="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-end">
-          <SectionHeading
-            eyebrow="Technology expertise"
-            title="Connecting Businesses with the Right Technology Expertise"
-            description="We help organizations access the specialized skills and technical knowledge needed to embrace change, improve capabilities and achieve their digital objectives."
-          />
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {technologies.map((tech) => {
-              const Icon = tech.icon;
-              return (
-                <div key={tech.name} className="flex min-h-28 flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-blue-300/40 hover:bg-white/[0.08]">
-                  <Icon className="text-cyan-300" size={22} />
-                  <p className="text-sm font-semibold text-slate-100">{tech.name}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="mt-9 border-t border-white/10 pt-6">
-          <p className="text-xs leading-6 text-slate-400">Technology areas shown are proposed website categories. Retain only the technologies InnovaRise genuinely supports.</p>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Industries() {
   return (
