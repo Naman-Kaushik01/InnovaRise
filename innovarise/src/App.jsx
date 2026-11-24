@@ -3,6 +3,7 @@ import logo from "./assets/logo.png";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Services from "./sections/Services";
+import WhyUs from "./sections/WhyUs";
 
 
 import {
@@ -144,33 +145,6 @@ function SectionHeading({ eyebrow, title, description, centered = false }) {
   );
 }
 
-function WhyUs() {
-  return (
-    <section className="section-shell py-24 lg:py-28">
-      <SectionHeading
-        eyebrow="Why InnovaRise"
-        title="Your Success Is Our Priority"
-        description="We go beyond traditional staffing and technology services. We focus on understanding your business, identifying the right opportunities and delivering solutions that create lasting value."
-        centered
-      />
-      <div className="mt-14 grid gap-x-10 gap-y-11 sm:grid-cols-2 lg:grid-cols-3">
-        {differentiators.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <div key={item.title} className="flex gap-5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-600"><Icon size={22} /></div>
-              <div>
-                <p className="mb-2 text-xs font-bold tracking-widest text-blue-600">0{index + 1}</p>
-                <h3 className="text-lg font-bold text-slate-950">{item.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
 
 function Technology() {
   return (
