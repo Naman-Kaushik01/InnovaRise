@@ -1,7 +1,8 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
 import logo from "./assets/logo.png";
-import About from "./components/About";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Services from "./sections/Services";
 
 
 import {
@@ -140,41 +141,6 @@ function SectionHeading({ eyebrow, title, description, centered = false }) {
         </p>
       )}
     </div>
-  );
-}
-
-function Services() {
-  return (
-    <section id="services" className="bg-slate-50 py-24 lg:py-28">
-      <div className="section-shell">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeading
-            eyebrow="What we do"
-            title="Comprehensive Solutions. One Trusted Partner."
-            description="From finding the right professionals to delivering specialized technology expertise, we provide flexible solutions designed around your business needs."
-          />
-          <a href="#contact" className="mb-1 inline-flex shrink-0 items-center gap-2 text-sm font-bold text-blue-600">Discuss your needs <ArrowUpRight size={17} /></a>
-        </div>
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <article key={service.number} className="group rounded-3xl border border-slate-200/80 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold tracking-[0.18em] text-slate-400">{service.number}</span>
-                  <span className="rounded-2xl bg-blue-50 p-3 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white"><Icon size={23} /></span>
-                </div>
-                <h3 className="mt-9 text-xl font-bold text-slate-950">{service.title}</h3>
-                <p className="mt-4 min-h-[105px] text-sm leading-7 text-slate-600">{service.description}</p>
-                <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-xs font-bold text-blue-600">
-                  {service.link} <ArrowRight size={15} className="transition group-hover:translate-x-1" />
-                </a>
-              </article>
-            );
-          })}
-        </div>
-      </div>
-    </section>
   );
 }
 
