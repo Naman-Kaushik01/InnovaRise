@@ -40,7 +40,7 @@ const Hero = () => {
           </h1>
 
           <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-            InnovaRise Technology empowers businesses through innovative
+            InnovaRise Technologies empowers businesses through innovative
             technology consulting, strategic IT staffing, and exceptional
             talent solutions. We connect the right expertise with the right
             opportunities to accelerate business growth.
