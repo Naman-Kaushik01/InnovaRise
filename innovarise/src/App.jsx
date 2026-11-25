@@ -146,37 +146,6 @@ function SectionHeading({ eyebrow, title, description, centered = false }) {
   );
 }
 
-
-function Industries() {
-  return (
-    <section id="industries" className="section-shell py-24 lg:py-28">
-      <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
-        <div>
-          <SectionHeading
-            eyebrow="Industries we serve"
-            title="Supporting Businesses Across Diverse Industries"
-            description="Every industry has unique technology and workforce requirements. We connect organizations with the expertise needed to move forward."
-          />
-          <a href="#contact" className="mt-8 inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-800 transition hover:border-blue-600 hover:text-blue-600">
-            Talk to our team <ArrowUpRight size={16} />
-          </a>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {industries.map((industry, index) => (
-            <div key={industry} className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-blue-200 hover:bg-blue-50/50">
-              <div className="flex items-center gap-4">
-                <span className="text-xs font-bold text-blue-500">0{index + 1}</span>
-                <span className="text-sm font-bold text-slate-800">{industry}</span>
-              </div>
-              <ChevronRight size={17} className="text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-600" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Approach() {
   return (
     <section className="bg-slate-50 py-24 lg:py-28">
