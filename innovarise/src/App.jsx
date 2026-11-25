@@ -6,6 +6,7 @@ import Services from "./sections/Services";
 import WhyUs from "./sections/WhyUs";
 import Technology from "./sections/Technology";
 import Industries from "./sections/Industries";
+import Approach from "./sections/Approach";
 
 
 import {
@@ -147,30 +148,6 @@ function SectionHeading({ eyebrow, title, description, centered = false }) {
   );
 }
 
-function Approach() {
-  return (
-    <section className="bg-slate-50 py-24 lg:py-28">
-      <div className="section-shell">
-        <SectionHeading
-          eyebrow="How we work"
-          title="A Partnership Built Around Your Success"
-          description="We follow a collaborative and structured approach to understand your requirements, identify opportunities and deliver solutions that support your business objectives."
-          centered
-        />
-        <div className="mt-16 grid gap-8 md:grid-cols-5">
-          {processSteps.map(([number, title, description], index) => (
-            <div key={number} className="relative">
-              {index < processSteps.length - 1 && <div className="absolute left-12 top-6 hidden h-px w-[calc(100%-24px)] bg-blue-200 md:block" />}
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-sm font-bold text-white shadow-lg shadow-blue-600/20">{number}</div>
-              <h3 className="mt-6 text-base font-bold text-slate-950">{title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function ContactCTA() {
   return (
