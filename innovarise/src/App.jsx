@@ -5,6 +5,7 @@ import About from "./sections/About";
 import Services from "./sections/Services";
 import WhyUs from "./sections/WhyUs";
 import Technology from "./sections/Technology";
+import Industries from "./sections/Industries";
 
 
 import {
