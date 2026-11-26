@@ -1,6 +1,6 @@
 
 import { Routes, Route, Link } from "react-router-dom";
-
+import AboutPage from "./pages/AboutPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -10,8 +10,6 @@ import HomePage from "./pages/Homepage";
 import ServicesPage from "./pages/ServicesPage";
 
 // Temporary page components
-import About from "./sections/About";
-import WhyUs from "./sections/WhyUs";
 import Technology from "./sections/Technology";
 import Industries from "./sections/Industries";
 import Careers from "./sections/Careers";
@@ -56,15 +54,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
 
           {/* ABOUT PAGE */}
-          <Route
-            path="/about"
-            element={
-              <>
-                <About />
-                <WhyUs />
-              </>
-            }
-          />
+          <Route path="/about" element={<AboutPage />} />
 
           {/* SERVICES PAGE */}
           <Route
