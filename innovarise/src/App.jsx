@@ -1,15 +1,27 @@
 
 import { Routes, Route, Link } from "react-router-dom";
-import AboutPage from "./pages/AboutPage";
+
+// Common Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
-// Existing pages
-import HomePage from "./pages/Homepage";
+// Completed Pages
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 
-// Temporary page components
+// Individual Service Pages
+import ITStaffing from "./pages/services/ITStaffing";
+import TalentAcquisition from "./pages/services/TalentAcquisition";
+import TechnologyConsulting from "./pages/services/TechnologyConsulting";
+import WorkforceSolutions from "./pages/services/WorkforceSolutions";
+import SoftwareDevelopment from "./pages/services/SoftwareDevelopment";
+import HealthcareStaffing from "./pages/services/HealthcareStaffing";
+import AIEngineering from "./pages/services/AIEngineering";
+import AppDevelopment from "./pages/services/AppDevelopment";
+
+// Temporary Pages
 import Technology from "./sections/Technology";
 import Industries from "./sections/Industries";
 import Careers from "./sections/Careers";
@@ -50,61 +62,79 @@ export default function App() {
 
         <Routes>
 
-          {/* HOME PAGE */}
+          {/* MAIN PAGES */}
           <Route path="/" element={<HomePage />} />
 
-          {/* ABOUT PAGE */}
-          <Route path="/about" element={<AboutPage />} />
+          <Route
+            path="/about"
+            element={<AboutPage />}
+          />
 
-          {/* SERVICES PAGE */}
           <Route
             path="/services"
             element={<ServicesPage />}
           />
 
-          {/* TECHNOLOGY PAGE */}
+          {/* INDIVIDUAL SERVICE PAGES */}
+          <Route
+            path="/services/it-staffing"
+            element={<ITStaffing />}
+          />
+
+          <Route
+            path="/services/talent-acquisition"
+            element={<TalentAcquisition />}
+          />
+
+          <Route
+            path="/services/technology-consulting"
+            element={<TechnologyConsulting />}
+          />
+
+          <Route
+            path="/services/workforce-solutions"
+            element={<WorkforceSolutions />}
+          />
+
+          <Route
+            path="/services/software-development"
+            element={<SoftwareDevelopment />}
+          />
+
+          <Route
+            path="/services/healthcare-staffing"
+            element={<HealthcareStaffing />}
+          />
+
+          <Route
+            path="/services/ai-engineering"
+            element={<AIEngineering />}
+          />
+
+          <Route
+            path="/services/app-development"
+            element={<AppDevelopment />}
+          />
+
+          {/* TEMPORARY MAIN PAGES */}
           <Route
             path="/technology"
             element={<Technology />}
           />
 
-          {/* INDUSTRIES PAGE */}
           <Route
             path="/industries"
             element={<Industries />}
           />
 
-          {/* CAREERS PAGE */}
           <Route
             path="/careers"
             element={<Careers />}
           />
 
-          {/* CONTACT PAGE */}
           <Route
             path="/contact"
             element={<ContactCTA />}
-          />
-
-          {/* INDIVIDUAL SERVICE PAGES */}
-          <Route
-            path="/services/it-staffing"
-            element={<ComingSoon />}
-          />
-
-          <Route
-            path="/services/talent-acquisition"
-            element={<ComingSoon />}
-          />
-
-          <Route
-            path="/services/technology-consulting"
-            element={<ComingSoon />}
-          />
-
-          <Route
-            path="/services/workforce-solutions"
-            element={<ComingSoon />}
           />
 
           {/* LEGAL PAGES */}
@@ -118,8 +148,11 @@ export default function App() {
             element={<ComingSoon />}
           />
 
-          {/* FALLBACK PAGE */}
-          <Route path="*" element={<ComingSoon />} />
+          {/* FALLBACK */}
+          <Route
+            path="*"
+            element={<ComingSoon />}
+          />
 
         </Routes>
 
