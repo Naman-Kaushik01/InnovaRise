@@ -107,7 +107,7 @@ const ServicesPage = () => {
       </section>
 
       {/* SERVICES OVERVIEW */}
-      <Services />
+      <Services showViewAll={false} />
 
       {/* WHY OUR SERVICES */}
       <section className="bg-white py-24 lg:py-28">

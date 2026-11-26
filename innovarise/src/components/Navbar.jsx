@@ -1,16 +1,13 @@
 
 import { useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom"
+import serviceLinks from "../data/services";;
 
 import {
   Menu,
   X,
   ArrowUpRight,
   ChevronDown,
-  Users,
-  Target,
-  Lightbulb,
-  Network,
 } from "lucide-react";
 
 import logo from "../assets/logo.png";
@@ -24,32 +21,6 @@ const navLinks = [
   { name: "Careers", path: "/careers" },
 ];
 
-const serviceLinks = [
-  {
-    name: "IT Staffing",
-    path: "/services/it-staffing",
-    icon: Users,
-    description: "Connect with skilled IT professionals.",
-  },
-  {
-    name: "Talent Acquisition",
-    path: "/services/talent-acquisition",
-    icon: Target,
-    description: "Find the right talent for your business.",
-  },
-  {
-    name: "Technology Consulting",
-    path: "/services/technology-consulting",
-    icon: Lightbulb,
-    description: "Transform your business through technology.",
-  },
-  {
-    name: "Workforce Solutions",
-    path: "/services/workforce-solutions",
-    icon: Network,
-    description: "Build flexible and scalable teams.",
-  },
-];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -142,7 +113,7 @@ const Navbar = () => {
 
                 {/* SERVICES DROPDOWN */}
                 {servicesOpen && (
-                  <div className="absolute left-1/2 top-full w-[350px] -translate-x-1/2 pt-5">
+                  <div className="absolute left-1/2 top-full w-[680px] -translate-x-1/2 pt-5">
 
                     <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-900/10">
 
@@ -150,7 +121,8 @@ const Navbar = () => {
                         Our Services
                       </p>
 
-                      {serviceLinks.map((service) => {
+                      <div className="grid grid-cols-2 gap-2">
+                        {serviceLinks.map((service) => {
                         const Icon = service.icon;
 
                         return (
@@ -167,19 +139,19 @@ const Navbar = () => {
 
                             <div>
                               <h3 className="text-sm font-bold text-slate-900 group-hover:text-blue-600">
-                                {service.name}
+                                {service.title}
                               </h3>
 
                               <p className="mt-1 text-xs leading-5 text-slate-500">
-                                {service.description}
+                                {service.shortDescription}
                               </p>
                             </div>
 
                           </Link>
                         );
                       })}
-
-                      <div className="mt-2 border-t border-slate-100 pt-2">
+                  </div>
+                  <div className="mt-2 border-t border-slate-100 pt-2">
 
                         <Link
                           to="/services"

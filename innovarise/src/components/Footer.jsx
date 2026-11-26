@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import logo from "../assets/logo.png";
+import serviceLinks from "../data/services";
 
 const quickLinks = [
   { name: "Home", path: "/" },
@@ -13,24 +14,24 @@ const quickLinks = [
   { name: "Contact Us", path: "/contact" },
 ];
 
-const serviceLinks = [
-  {
-    name: "IT Staffing",
-    path: "/services/it-staffing",
-  },
-  {
-    name: "Talent Acquisition",
-    path: "/services/talent-acquisition",
-  },
-  {
-    name: "Technology Consulting",
-    path: "/services/technology-consulting",
-  },
-  {
-    name: "Workforce Solutions",
-    path: "/services/workforce-solutions",
-  },
-];
+// const serviceLinks = [
+//   {
+//     name: "IT Staffing",
+//     path: "/services/it-staffing",
+//   },
+//   {
+//     name: "Talent Acquisition",
+//     path: "/services/talent-acquisition",
+//   },
+//   {
+//     name: "Technology Consulting",
+//     path: "/services/technology-consulting",
+//   },
+//   {
+//     name: "Workforce Solutions",
+//     path: "/services/workforce-solutions",
+//   },
+// ];
 
 const Footer = () => {
   return (
@@ -109,7 +110,7 @@ const Footer = () => {
                     size={13}
                     className="text-blue-400 transition group-hover:translate-x-1"
                   />
-                  {service.name}
+                  {service.title}
                 </Link>
               </li>
             ))}

@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import services from "../data/services";
 
 import {
   Target,
@@ -62,12 +63,7 @@ const coreValues = [
   },
 ];
 
-const expertise = [
-  "IT Staffing",
-  "Talent Acquisition",
-  "Technology Consulting",
-  "Workforce Solutions",
-];
+const expertise = services.map((service) => service.title);
 
 const AboutPage = () => {
   return (

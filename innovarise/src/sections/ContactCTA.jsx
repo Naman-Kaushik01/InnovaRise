@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import services from "../data/services";
 
 import {
   ArrowUpRight,
@@ -8,12 +9,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-const benefits = [
-  "Technology Consulting",
-  "Strategic IT Staffing",
-  "Talent Acquisition",
-  "Workforce Solutions",
-];
+const benefits = services.map((service) => service.title);
 
 const ContactCTA = () => {
   return (
